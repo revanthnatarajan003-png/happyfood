@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Food</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+    }
+
+    header {
+      background: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .food-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 15px;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .food-card:hover {
+      transform: scale(1.05);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-info h3 {
+      margin: 5px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .food-info p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .order-btn {
+      display: none;
+      background: #ff6f61;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .order-btn:hover {
+      background: #e55a4f;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>🍔 Happy Food 🍕</header>
+
+  <div class="food-container">
+    <div class="food-card" onclick="toggleOrder(this)">
+      <img src="./images/pizza.jpeg" alt="Pizza">
+      <div class="food-info">
+        <h3>Cheese Pizza</h3>
+        <p>₹199 | ⭐ 4.5</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <div class="food-card" onclick="toggleOrder(this)">
+      <img src="./images/burger.jpeg" alt="Burger">
+      <div class="food-info">
+        <h3>Veggie Burger</h3>
+        <p>₹149 | ⭐ 4.2</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <div class="food-card" onclick="toggleOrder(this)">
+      <img src="./images/pasta.jpeg" alt="Pasta">
+      <div class="food-info">
+        <h3>Italian Pasta</h3>
+        <p>₹249 | ⭐ 4.7</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleOrder(card) {
+      let btn = card.querySelector(".order-btn");
+      btn.style.display = btn.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
